@@ -50,3 +50,5 @@ pdm add --dev pre-commit
 pre-commit install
 pre-commit sample-config > .pre-commit-config.yaml
 ```
+
+Add `ruff` to `.pre-commit-config.yaml`: https://github.com/astral-sh/ruff-pre-commit

@@ -5,28 +5,24 @@ description = "Django Tutorial"
 authors = [
   { name = "Zoltan", email = "" },
 ]
-dependencies = [
-  "django>=5.0.1",
-]
 requires-python = "==3.12.*"
 readme = "README.md"
 license = { text = "MIT" }
 
+dependencies = [
+  "django>=5.0.1",
+]
+
+dev-dependencies = [
+  "ruff>=0.1.14",
+  "django-stubs>=4.2.7",
+  "pyright>=1.1.345",
+  "pylance>=0.9.8",
+  "pre-commit>=3.6.0",
+]
 
 [tool.pdm]
 package-type = "pypi"
 
-[tool.pdm.dev-dependencies]
-dev = [
-    "ruff>=0.1.14",
-    "mypy>=1.8.0",
-    "django-stubs>=4.2.7",
-    "pyright>=1.1.345",
-    "pylance>=0.9.8",
-    "pre-commit>=3.6.0",
-]
-[tool.mypy]
-plugins = ["mypy_django_plugin.main"]
-
 [tool.django-stubs]
-django_settings_module = "myproject.settings"
+django_settings_module = "django_tutorial.settings"

@@ -3,17 +3,24 @@ name = "django-tutorial"
 version = "0.1.0"
 description = "Django Tutorial"
 authors = [
-  { name = "Zoltan", email = "" },
+  { name = "Zoltan" },
 ]
 requires-python = "==3.12.*"
 readme = "README.md"
 license = { text = "MIT" }
-
 dependencies = [
   "django>=5.0.1",
 ]
 
-dev-dependencies = [
+[tool.pdm]
+package-type = "application"
+
+[tool.pdm.scripts]
+manage = "pdm run manage.py"
+serve = "pdm manage runserver"
+
+[tool.pdm.dev-dependencies]
+dev = [
   "ruff>=0.1.14",
   "django-stubs>=4.2.7",
   "pyright>=1.1.345",
@@ -21,8 +28,9 @@ dev-dependencies = [
   "pre-commit>=3.6.0",
 ]
 
-[tool.pdm]
-package-type = "pypi"
-
 [tool.django-stubs]
 django_settings_module = "django_tutorial.settings"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"

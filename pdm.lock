@@ -5,17 +5,38 @@
 groups = ["default", "dev"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.1"
-content_hash = "sha256:15fc8b458e631030b7278cc1a570edfc7a6f8c8a733151ff63d39a3192d749f6"
+content_hash = "sha256:dcbe19c38aa1dfba3c94576920a4cd0e792fb9fb670e4b2c9cbc2a29149970ac"
 
 [[package]]
 name = "asgiref"
 version = "3.7.2"
 requires_python = ">=3.7"
 summary = "ASGI specs, helper code, and adapters"
-groups = ["default"]
+groups = ["default", "dev"]
 files = [
     {file = "asgiref-3.7.2-py3-none-any.whl", hash = "sha256:89b2ef2247e3b562a16eef663bc0e2e703ec6468e2fa8a5cd61cd449786d4f6e"},
     {file = "asgiref-3.7.2.tar.gz", hash = "sha256:9e0ce3aa93a819ba5b45120216b23878cf6e8525eb3848653452b4192b92afed"},
+]
+
+[[package]]
+name = "cfgv"
+version = "3.4.0"
+requires_python = ">=3.8"
+summary = "Validate configuration and produce human readable error messages."
+groups = ["dev"]
+files = [
+    {file = "cfgv-3.4.0-py2.py3-none-any.whl", hash = "sha256:b7265b1f29fd3316bfcd2b330d63d024f2bfd8bcb8b0272f8e19a504856c48f9"},
+    {file = "cfgv-3.4.0.tar.gz", hash = "sha256:e52591d4c5f5dead8e0f673fb16db7949d2cfb3f7da4582893288f0ded8fe560"},
+]
+
+[[package]]
+name = "distlib"
+version = "0.3.8"
+summary = "Distribution utilities"
+groups = ["dev"]
+files = [
+    {file = "distlib-0.3.8-py2.py3-none-any.whl", hash = "sha256:034db59a0b96f8ca18035f36290806a9a6e6bd9d1ff91e45a7f172eb17e51784"},
+    {file = "distlib-0.3.8.tar.gz", hash = "sha256:1530ea13e350031b6312d8580ddb6b27a104275a31106523b8f123787f494f64"},
 ]
 
 [[package]]
@@ -23,7 +44,7 @@ name = "django"
 version = "5.0.1"
 requires_python = ">=3.10"
 summary = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
-groups = ["default"]
+groups = ["default", "dev"]
 dependencies = [
     "asgiref<4,>=3.7.0",
     "sqlparse>=0.3.1",
@@ -35,14 +56,270 @@ files = [
 ]
 
 [[package]]
+name = "django-stubs"
+version = "4.2.7"
+requires_python = ">=3.8"
+summary = "Mypy stubs for Django"
+groups = ["dev"]
+dependencies = [
+    "django",
+    "django-stubs-ext>=4.2.7",
+    "types-PyYAML",
+    "types-pytz",
+    "typing-extensions",
+]
+files = [
+    {file = "django-stubs-4.2.7.tar.gz", hash = "sha256:8ccd2ff4ee5adf22b9e3b7b1a516d2e1c2191e9d94e672c35cc2bc3dd61e0f6b"},
+    {file = "django_stubs-4.2.7-py3-none-any.whl", hash = "sha256:4cf4de258fa71adc6f2799e983091b9d46cfc67c6eebc68fe111218c9a62b3b8"},
+]
+
+[[package]]
+name = "django-stubs-ext"
+version = "4.2.7"
+requires_python = ">=3.8"
+summary = "Monkey-patching and extensions for django-stubs"
+groups = ["dev"]
+dependencies = [
+    "django",
+    "typing-extensions",
+]
+files = [
+    {file = "django-stubs-ext-4.2.7.tar.gz", hash = "sha256:519342ac0849cda1559746c9a563f03ff99f636b0ebe7c14b75e816a00dfddc3"},
+    {file = "django_stubs_ext-4.2.7-py3-none-any.whl", hash = "sha256:45a5d102417a412e3606e3c358adb4744988a92b7b58ccf3fd64bddd5d04d14c"},
+]
+
+[[package]]
+name = "filelock"
+version = "3.13.1"
+requires_python = ">=3.8"
+summary = "A platform independent file lock."
+groups = ["dev"]
+files = [
+    {file = "filelock-3.13.1-py3-none-any.whl", hash = "sha256:57dbda9b35157b05fb3e58ee91448612eb674172fab98ee235ccb0b5bee19a1c"},
+    {file = "filelock-3.13.1.tar.gz", hash = "sha256:521f5f56c50f8426f5e03ad3b281b490a87ef15bc6c526f168290f0c7148d44e"},
+]
+
+[[package]]
+name = "identify"
+version = "2.5.33"
+requires_python = ">=3.8"
+summary = "File identification library for Python"
+groups = ["dev"]
+files = [
+    {file = "identify-2.5.33-py2.py3-none-any.whl", hash = "sha256:d40ce5fcd762817627670da8a7d8d8e65f24342d14539c59488dc603bf662e34"},
+    {file = "identify-2.5.33.tar.gz", hash = "sha256:161558f9fe4559e1557e1bff323e8631f6a0e4837f7497767c1782832f16b62d"},
+]
+
+[[package]]
+name = "nodeenv"
+version = "1.8.0"
+requires_python = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*"
+summary = "Node.js virtual environment builder"
+groups = ["dev"]
+dependencies = [
+    "setuptools",
+]
+files = [
+    {file = "nodeenv-1.8.0-py2.py3-none-any.whl", hash = "sha256:df865724bb3c3adc86b3876fa209771517b0cfe596beff01a92700e0e8be4cec"},
+    {file = "nodeenv-1.8.0.tar.gz", hash = "sha256:d51e0c37e64fbf47d017feac3145cdbb58836d7eee8c6f6d3b6880c5456227d2"},
+]
+
+[[package]]
+name = "numpy"
+version = "1.26.3"
+requires_python = ">=3.9"
+summary = "Fundamental package for array computing in Python"
+groups = ["dev"]
+files = [
+    {file = "numpy-1.26.3-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:a7081fd19a6d573e1a05e600c82a1c421011db7935ed0d5c483e9dd96b99cf13"},
+    {file = "numpy-1.26.3-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:12c70ac274b32bc00c7f61b515126c9205323703abb99cd41836e8125ea0043e"},
+    {file = "numpy-1.26.3-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7f784e13e598e9594750b2ef6729bcd5a47f6cfe4a12cca13def35e06d8163e3"},
+    {file = "numpy-1.26.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:5f24750ef94d56ce6e33e4019a8a4d68cfdb1ef661a52cdaee628a56d2437419"},
+    {file = "numpy-1.26.3-cp312-cp312-musllinux_1_1_aarch64.whl", hash = "sha256:77810ef29e0fb1d289d225cabb9ee6cf4d11978a00bb99f7f8ec2132a84e0166"},
+    {file = "numpy-1.26.3-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:8ed07a90f5450d99dad60d3799f9c03c6566709bd53b497eb9ccad9a55867f36"},
+    {file = "numpy-1.26.3-cp312-cp312-win32.whl", hash = "sha256:f73497e8c38295aaa4741bdfa4fda1a5aedda5473074369eca10626835445511"},
+    {file = "numpy-1.26.3-cp312-cp312-win_amd64.whl", hash = "sha256:da4b0c6c699a0ad73c810736303f7fbae483bcb012e38d7eb06a5e3b432c981b"},
+    {file = "numpy-1.26.3-pp39-pypy39_pp73-macosx_10_9_x86_64.whl", hash = "sha256:3c67423b3703f8fbd90f5adaa37f85b5794d3366948efe9a5190a5f3a83fc34e"},
+    {file = "numpy-1.26.3-pp39-pypy39_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:46f47ee566d98849323f01b349d58f2557f02167ee301e5e28809a8c0e27a2d0"},
+    {file = "numpy-1.26.3-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:a8474703bffc65ca15853d5fd4d06b18138ae90c17c8d12169968e998e448bb5"},
+    {file = "numpy-1.26.3.tar.gz", hash = "sha256:697df43e2b6310ecc9d95f05d5ef20eacc09c7c4ecc9da3f235d39e71b7da1e4"},
+]
+
+[[package]]
+name = "platformdirs"
+version = "4.1.0"
+requires_python = ">=3.8"
+summary = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
+groups = ["dev"]
+files = [
+    {file = "platformdirs-4.1.0-py3-none-any.whl", hash = "sha256:11c8f37bcca40db96d8144522d925583bdb7a31f7b0e37e3ed4318400a8e2380"},
+    {file = "platformdirs-4.1.0.tar.gz", hash = "sha256:906d548203468492d432bcb294d4bc2fff751bf84971fbb2c10918cc206ee420"},
+]
+
+[[package]]
+name = "pre-commit"
+version = "3.6.0"
+requires_python = ">=3.9"
+summary = "A framework for managing and maintaining multi-language pre-commit hooks."
+groups = ["dev"]
+dependencies = [
+    "cfgv>=2.0.0",
+    "identify>=1.0.0",
+    "nodeenv>=0.11.1",
+    "pyyaml>=5.1",
+    "virtualenv>=20.10.0",
+]
+files = [
+    {file = "pre_commit-3.6.0-py2.py3-none-any.whl", hash = "sha256:c255039ef399049a5544b6ce13d135caba8f2c28c3b4033277a788f434308376"},
+    {file = "pre_commit-3.6.0.tar.gz", hash = "sha256:d30bad9abf165f7785c15a21a1f46da7d0677cb00ee7ff4c579fd38922efe15d"},
+]
+
+[[package]]
+name = "pyarrow"
+version = "15.0.0"
+requires_python = ">=3.8"
+summary = "Python library for Apache Arrow"
+groups = ["dev"]
+dependencies = [
+    "numpy<2,>=1.16.6",
+]
+files = [
+    {file = "pyarrow-15.0.0-cp312-cp312-macosx_10_15_x86_64.whl", hash = "sha256:9950a9c9df24090d3d558b43b97753b8f5867fb8e521f29876aa021c52fda351"},
+    {file = "pyarrow-15.0.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:003d680b5e422d0204e7287bb3fa775b332b3fce2996aa69e9adea23f5c8f970"},
+    {file = "pyarrow-15.0.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:f75fce89dad10c95f4bf590b765e3ae98bcc5ba9f6ce75adb828a334e26a3d40"},
+    {file = "pyarrow-15.0.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:0ca9cb0039923bec49b4fe23803807e4ef39576a2bec59c32b11296464623dc2"},
+    {file = "pyarrow-15.0.0-cp312-cp312-manylinux_2_28_aarch64.whl", hash = "sha256:9ed5a78ed29d171d0acc26a305a4b7f83c122d54ff5270810ac23c75813585e4"},
+    {file = "pyarrow-15.0.0-cp312-cp312-manylinux_2_28_x86_64.whl", hash = "sha256:6eda9e117f0402dfcd3cd6ec9bfee89ac5071c48fc83a84f3075b60efa96747f"},
+    {file = "pyarrow-15.0.0-cp312-cp312-win_amd64.whl", hash = "sha256:9a3a6180c0e8f2727e6f1b1c87c72d3254cac909e609f35f22532e4115461177"},
+    {file = "pyarrow-15.0.0.tar.gz", hash = "sha256:876858f549d540898f927eba4ef77cd549ad8d24baa3207cf1b72e5788b50e83"},
+]
+
+[[package]]
+name = "pylance"
+version = "0.9.8"
+requires_python = ">=3.8"
+summary = "python wrapper for Lance columnar format"
+groups = ["dev"]
+dependencies = [
+    "numpy>=1.22",
+    "pyarrow>=12",
+]
+files = [
+    {file = "pylance-0.9.8-cp38-abi3-macosx_10_15_x86_64.whl", hash = "sha256:d8346680411cbad10ae2008302c5ebba7d855a063bcf5062429c56d844fa0a90"},
+    {file = "pylance-0.9.8-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:1aa74476fccf2f41ec5dd422297e2e51c3cd9f3971d48c7a73068d6e8f7b5e5f"},
+    {file = "pylance-0.9.8-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e49b1e16a495c89d95c5721686df435ff7b6cffb9075009781be532ca77fbdc0"},
+    {file = "pylance-0.9.8-cp38-abi3-manylinux_2_24_aarch64.whl", hash = "sha256:65b86b4005cbf7c5d259e0abf278e1c88bd5d99b68b6a6b79c52333996425605"},
+    {file = "pylance-0.9.8-cp38-abi3-win_amd64.whl", hash = "sha256:bd15e4f9d172aad0e1b87491427936d618c99cd6dd392dc132d7c5e8c315b5d3"},
+]
+
+[[package]]
+name = "pyright"
+version = "1.1.348"
+requires_python = ">=3.7"
+summary = "Command line wrapper for pyright"
+groups = ["dev"]
+dependencies = [
+    "nodeenv>=1.6.0",
+]
+files = [
+    {file = "pyright-1.1.348-py3-none-any.whl", hash = "sha256:e7d4df504c4c082b5c3725a8c15fc3fda62da5d09fc77994baa77f359a1b62f2"},
+    {file = "pyright-1.1.348.tar.gz", hash = "sha256:1c6994546f7ab130b9da8c357f8b2a99bef268b6d8ae2eae292bde66923aa7af"},
+]
+
+[[package]]
+name = "pyyaml"
+version = "6.0.1"
+requires_python = ">=3.6"
+summary = "YAML parser and emitter for Python"
+groups = ["dev"]
+files = [
+    {file = "PyYAML-6.0.1-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:855fb52b0dc35af121542a76b9a84f8d1cd886ea97c84703eaa6d88e37a2ad28"},
+    {file = "PyYAML-6.0.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:40df9b996c2b73138957fe23a16a4f0ba614f4c0efce1e9406a184b6d07fa3a9"},
+    {file = "PyYAML-6.0.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a08c6f0fe150303c1c6b71ebcd7213c2858041a7e01975da3a99aed1e7a378ef"},
+    {file = "PyYAML-6.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6c22bec3fbe2524cde73d7ada88f6566758a8f7227bfbf93a408a9d86bcc12a0"},
+    {file = "PyYAML-6.0.1-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:8d4e9c88387b0f5c7d5f281e55304de64cf7f9c0021a3525bd3b1c542da3b0e4"},
+    {file = "PyYAML-6.0.1-cp312-cp312-win32.whl", hash = "sha256:d483d2cdf104e7c9fa60c544d92981f12ad66a457afae824d146093b8c294c54"},
+    {file = "PyYAML-6.0.1-cp312-cp312-win_amd64.whl", hash = "sha256:0d3304d8c0adc42be59c5f8a4d9e3d7379e6955ad754aa9d6ab7a398b59dd1df"},
+    {file = "PyYAML-6.0.1.tar.gz", hash = "sha256:bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"},
+]
+
+[[package]]
+name = "ruff"
+version = "0.1.14"
+requires_python = ">=3.7"
+summary = "An extremely fast Python linter and code formatter, written in Rust."
+groups = ["dev"]
+files = [
+    {file = "ruff-0.1.14-py3-none-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:96f76536df9b26622755c12ed8680f159817be2f725c17ed9305b472a757cdbb"},
+    {file = "ruff-0.1.14-py3-none-macosx_10_12_x86_64.whl", hash = "sha256:ab3f71f64498c7241123bb5a768544cf42821d2a537f894b22457a543d3ca7a9"},
+    {file = "ruff-0.1.14-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7060156ecc572b8f984fd20fd8b0fcb692dd5d837b7606e968334ab7ff0090ab"},
+    {file = "ruff-0.1.14-py3-none-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:a53d8e35313d7b67eb3db15a66c08434809107659226a90dcd7acb2afa55faea"},
+    {file = "ruff-0.1.14-py3-none-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:bea9be712b8f5b4ebed40e1949379cfb2a7d907f42921cf9ab3aae07e6fba9eb"},
+    {file = "ruff-0.1.14-py3-none-manylinux_2_17_ppc64.manylinux2014_ppc64.whl", hash = "sha256:2270504d629a0b064247983cbc495bed277f372fb9eaba41e5cf51f7ba705a6a"},
+    {file = "ruff-0.1.14-py3-none-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:80258bb3b8909b1700610dfabef7876423eed1bc930fe177c71c414921898efa"},
+    {file = "ruff-0.1.14-py3-none-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:653230dd00aaf449eb5ff25d10a6e03bc3006813e2cb99799e568f55482e5cae"},
+    {file = "ruff-0.1.14-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:87b3acc6c4e6928459ba9eb7459dd4f0c4bf266a053c863d72a44c33246bfdbf"},
+    {file = "ruff-0.1.14-py3-none-musllinux_1_2_aarch64.whl", hash = "sha256:6b3dadc9522d0eccc060699a9816e8127b27addbb4697fc0c08611e4e6aeb8b5"},
+    {file = "ruff-0.1.14-py3-none-musllinux_1_2_armv7l.whl", hash = "sha256:1c8eca1a47b4150dc0fbec7fe68fc91c695aed798532a18dbb1424e61e9b721f"},
+    {file = "ruff-0.1.14-py3-none-musllinux_1_2_i686.whl", hash = "sha256:62ce2ae46303ee896fc6811f63d6dabf8d9c389da0f3e3f2bce8bc7f15ef5488"},
+    {file = "ruff-0.1.14-py3-none-musllinux_1_2_x86_64.whl", hash = "sha256:b2027dde79d217b211d725fc833e8965dc90a16d0d3213f1298f97465956661b"},
+    {file = "ruff-0.1.14-py3-none-win32.whl", hash = "sha256:722bafc299145575a63bbd6b5069cb643eaa62546a5b6398f82b3e4403329cab"},
+    {file = "ruff-0.1.14-py3-none-win_amd64.whl", hash = "sha256:e3d241aa61f92b0805a7082bd89a9990826448e4d0398f0e2bc8f05c75c63d99"},
+    {file = "ruff-0.1.14-py3-none-win_arm64.whl", hash = "sha256:269302b31ade4cde6cf6f9dd58ea593773a37ed3f7b97e793c8594b262466b67"},
+    {file = "ruff-0.1.14.tar.gz", hash = "sha256:ad3f8088b2dfd884820289a06ab718cde7d38b94972212cc4ba90d5fbc9955f3"},
+]
+
+[[package]]
+name = "setuptools"
+version = "69.0.3"
+requires_python = ">=3.8"
+summary = "Easily download, build, install, upgrade, and uninstall Python packages"
+groups = ["dev"]
+files = [
+    {file = "setuptools-69.0.3-py3-none-any.whl", hash = "sha256:385eb4edd9c9d5c17540511303e39a147ce2fc04bc55289c322b9e5904fe2c05"},
+    {file = "setuptools-69.0.3.tar.gz", hash = "sha256:be1af57fc409f93647f2e8e4573a142ed38724b8cdd389706a867bb4efcf1e78"},
+]
+
+[[package]]
 name = "sqlparse"
 version = "0.4.4"
 requires_python = ">=3.5"
 summary = "A non-validating SQL parser."
-groups = ["default"]
+groups = ["default", "dev"]
 files = [
     {file = "sqlparse-0.4.4-py3-none-any.whl", hash = "sha256:5430a4fe2ac7d0f93e66f1efc6e1338a41884b7ddf2a350cedd20ccc4d9d28f3"},
     {file = "sqlparse-0.4.4.tar.gz", hash = "sha256:d446183e84b8349fa3061f0fe7f06ca94ba65b426946ffebe6e3e8295332420c"},
+]
+
+[[package]]
+name = "types-pytz"
+version = "2023.3.1.1"
+summary = "Typing stubs for pytz"
+groups = ["dev"]
+files = [
+    {file = "types-pytz-2023.3.1.1.tar.gz", hash = "sha256:cc23d0192cd49c8f6bba44ee0c81e4586a8f30204970fc0894d209a6b08dab9a"},
+    {file = "types_pytz-2023.3.1.1-py3-none-any.whl", hash = "sha256:1999a123a3dc0e39a2ef6d19f3f8584211de9e6a77fe7a0259f04a524e90a5cf"},
+]
+
+[[package]]
+name = "types-pyyaml"
+version = "6.0.12.12"
+summary = "Typing stubs for PyYAML"
+groups = ["dev"]
+files = [
+    {file = "types-PyYAML-6.0.12.12.tar.gz", hash = "sha256:334373d392fde0fdf95af5c3f1661885fa10c52167b14593eb856289e1855062"},
+    {file = "types_PyYAML-6.0.12.12-py3-none-any.whl", hash = "sha256:c05bc6c158facb0676674b7f11fe3960db4f389718e19e62bd2b84d6205cfd24"},
+]
+
+[[package]]
+name = "typing-extensions"
+version = "4.9.0"
+requires_python = ">=3.8"
+summary = "Backported and Experimental Type Hints for Python 3.8+"
+groups = ["dev"]
+files = [
+    {file = "typing_extensions-4.9.0-py3-none-any.whl", hash = "sha256:af72aea155e91adfc61c3ae9e0e342dbc0cba726d6cba4b6c72c1f34e47291cd"},
+    {file = "typing_extensions-4.9.0.tar.gz", hash = "sha256:23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"},
 ]
 
 [[package]]
@@ -50,9 +327,25 @@ name = "tzdata"
 version = "2023.4"
 requires_python = ">=2"
 summary = "Provider of IANA time zone data"
-groups = ["default"]
+groups = ["default", "dev"]
 marker = "sys_platform == \"win32\""
 files = [
     {file = "tzdata-2023.4-py2.py3-none-any.whl", hash = "sha256:aa3ace4329eeacda5b7beb7ea08ece826c28d761cda36e747cfbf97996d39bf3"},
     {file = "tzdata-2023.4.tar.gz", hash = "sha256:dd54c94f294765522c77399649b4fefd95522479a664a0cec87f41bebc6148c9"},
+]
+
+[[package]]
+name = "virtualenv"
+version = "20.25.0"
+requires_python = ">=3.7"
+summary = "Virtual Python Environment builder"
+groups = ["dev"]
+dependencies = [
+    "distlib<1,>=0.3.7",
+    "filelock<4,>=3.12.2",
+    "platformdirs<5,>=3.9.1",
+]
+files = [
+    {file = "virtualenv-20.25.0-py3-none-any.whl", hash = "sha256:4238949c5ffe6876362d9c0180fc6c3a824a7b12b80604eeb8085f2ed7460de3"},
+    {file = "virtualenv-20.25.0.tar.gz", hash = "sha256:bf51c0d9c7dd63ea8e44086fa1e4fb1093a31e963b86959257378aef020e1f1b"},
 ]

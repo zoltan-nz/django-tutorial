@@ -1,6 +1,6 @@
 # Django
 
-## Log
+## Initial Setup
 
 ### Install python
 
@@ -25,7 +25,6 @@ pdm run django-admin startproject mysite .
 ### Add strict typing
 
 ```shell
-pdm add mypy
 pdm add --dev django-stubs
 pdm add --dev pyright
 pdm add --dev pylance
@@ -52,3 +51,30 @@ pre-commit sample-config > .pre-commit-config.yaml
 ```
 
 Add `ruff` to `.pre-commit-config.yaml`: https://github.com/astral-sh/ruff-pre-commit
+
+## Models and Migrations
+
+```shell
+pdm run manage.py makemigrations polls
+```
+
+```shell
+pdm run manage.py sqlmigrate polls 0001
+```
+
+```shell
+pdm run manage.py check
+```
+
+```shell
+pdm run manage.py migrate
+```
+## Shell and Admin
+
+```shell
+pdm run manage.py shell
+```
+
+```shell
+pdm run manage.py createsuperuser
+```

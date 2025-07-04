@@ -22,6 +22,12 @@ pdm update
 pdm run django-admin startproject mysite .
 ```
 
+### Run server
+
+```shell
+pdm run manage.py runserver
+```
+
 ### Add strict typing
 
 ```shell

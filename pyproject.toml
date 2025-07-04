@@ -9,11 +9,12 @@ requires-python = "==3.12.*"
 readme = "README.md"
 license = { text = "MIT" }
 dependencies = [
-  "django>=5.0.1",
+    "django>=5.0.1",
+    "django-stubs-ext @ git+https://github.com/typeddjango/django-stubs.git@master#subdirectory=ext",
 ]
 
 [tool.pdm]
-package-type = "application"
+distribution = false
 
 [tool.pdm.scripts]
 manage = "pdm run manage.py"
@@ -21,12 +22,16 @@ serve = "pdm manage runserver"
 
 [tool.pdm.dev-dependencies]
 dev = [
-  "ruff>=0.1.14",
-  "django-stubs>=4.2.7",
-  "pyright>=1.1.345",
-  "pylance>=0.9.8",
-  "pre-commit>=3.6.0",
+    "ruff>=0.1.14",
+    "pyright>=1.1.345",
+    "pylance>=0.9.8",
+    "pre-commit>=3.6.0",
+    "django-stubs @ git+https://github.com/typeddjango/django-stubs.git@master",
+    "mypy>=1.8.0",
 ]
+
+[tool.mypy]
+plugins = ["mypy_django_plugin.main"]
 
 [tool.django-stubs]
 django_settings_module = "django_tutorial.settings"
